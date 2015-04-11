@@ -1,0 +1,35 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+      "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html">
+    
+    <h:head>
+        <meta http-equiv="Content-Type" 
+              content="text/html; charset=UTF-8" />
+
+        <title>JSF 2 Beispielapplikation</title>
+    </h:head>
+    
+    <h:body>
+    
+    	<!-- Relocatable resources 
+    	Über das Attribut 'target' kann zusätzlich angegeben werden, WO das Element innerhalb der Seite plaziert wird
+    	-->
+    	<h:outputStylesheet library="css" name="resources.css" target="body"/>
+    	<h1>JSF 2.2: Konfigurierbares resource Verzeichnis</h1>
+    	<p>
+    	Ab JSF 2.2 ist es möglich, den Pfad zu den Resourcen über den Kontext-Parameter javax.faces.WEBAPP_RESOURCES_DIRECTORY zu definieren. <br />
+    	Bis dahin wurde das resources Verzeichnis immer direkt unterhalb des Root-Verzeichnisses gesucht. Dadurch war das Verzeichnis von aussen einsehbar. <br />
+    	Setzt man nun den Parameter javax.faces.WEBAPP_RESOURCES_DIRECTORY auf /WEB-INF/resources, ist der Zugriff von aussen nicht mehr möglich.
+    	</p>
+    	<p>Das Stylesheet für diese Seite wurde über den JSF Resource Handler geladen</p>
+    	<p>Beispiel für den Zugriff auf ein Bild mithilfe der Expression Language:</p>
+    	<h:graphicImage value="#{resource['img:cloudy.gif']}"/>
+    	<!-- Web.xml 
+    		<context-param>
+  				<param-name>javax.faces.WEBAPP_RESOURCES_DIRECTORY</param-name>
+  				<param-value>/WEB-INF/resources</param-value>
+			</context-param>
+    	-->
+    </h:body>
+</html>
