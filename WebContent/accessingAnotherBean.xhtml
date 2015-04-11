@@ -1,0 +1,25 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+      "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html">
+    
+    <h:head>
+        <meta http-equiv="Content-Type" 
+              content="text/html; charset=UTF-8" />
+
+        <title>JSF 2 Beispielapplikation</title>
+    </h:head>
+    
+    <h:body>
+    	<h1>Eine andere Managed Bean über den Faces Context abrufen</h1>
+    	<p>In diesem Beispiel wird eine andere Managed Bean abgefragt.</p>
+    
+    	<h:form>
+      		<h:commandButton id="accessButton" value="#{viewBean.buttonText}" style="font-family:Palatino;font-style:italic" action="#{viewBean.accessAnotherBean}"/>
+      		
+      		<!-- Messages mit dem Attribut 'globalOnly' zeigen alles Messages an, die ohne ClientID abgelegt wurden -->
+      		<h:messages globalOnly="true"/>
+		</h:form>	
+    	
+    </h:body>
+</html>
